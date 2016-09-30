@@ -1,0 +1,21 @@
+ User Function xTete()
+ Local oXml := Nil
+ Local CEP  := "08410420" 
+ Local cError   := ""
+ Local cWarning := ""
+ Local oXml := NIL
+
+//Gera o Objeto XML
+
+ 
+   cUrl   := "http://cep.republicavirtual.com.br/web_cep.php?cep="+StrTran(CEP,"-","")+"&formato=xml"
+ 
+   
+   oXml := XmlParser( HttpGet( cUrl ), "_", @cError, @cWarning )
+ 
+ 
+ 
+ MsgInfo(oXml:_WEBSERVICECEP:_BAIRRO:TEXT)
+ 
+ 
+ 
